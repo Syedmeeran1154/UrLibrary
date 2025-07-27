@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Your Library</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5efe0;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none; /* Initially hidden */
+            margin-top: 4px;
+        }
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 300px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* Pricing Section */
+        .pricing-section {
+            text-align: center;
+            padding: 100px 50px 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: #111;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: left;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #c4a8ff;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* Premium Plan */
+        .premium {
+            transform: scale(1.05);
+        }
+    .a{
+        text-align: center;
+    }
+
+        /* Footer */
+        .footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+
+.colour
+{
+    color:white;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            
+            <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="#" class="active">PRICING</a></li>
+                <li><a href="contact_us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn">LOGIN</a>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+    </br>
+</br>
+        <h1>Pricing</h1>
+        <div class="pricing-container">
+            
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h2 class="a">📚 Free Plan</h2>
+                <p class="price">₹0/month</p>
+            </br>
+                <ul>
+                    <li>✅ Access to limited books</li>
+                    <li>✅ Borrow up to 2 books/month</li>
+                    <li>✅ Digital library access (limited selection)</li>
+                    <li>✅ Community discussions & book reviews</li>
+                    <li>✅ Basic customer support</li>
+                </ul>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card premium">
+                <h2 class="a">📖 Premium Plan</h2>
+                <p class="price">₹499/month</p>
+                <ul>
+                    <li>✅ Unlimited book borrowing</li>
+                    <li>✅ Early access to new arrivals & exclusive collections</li>
+                    <li>✅ Free home delivery for physical books</li>
+                    <li>✅ Personalized book recommendations</li>
+                    <li>✅ Dedicated librarian support</li>
+                    <li>✅ Discount on late return fees</li>
+                </ul>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="pricing-card">
+                <h2 class="a">📑 Standard Plan</h2>
+                <p class="price">₹199/month</p>
+            </br>
+                <ul>
+                    <li>✅ Access to full book collection</li>
+                    <li>✅ Borrow up to 5 books/month</li>
+                    <li>✅ Unlimited access to digital library (e-books & audiobooks)</li>
+                    <li>✅ Priority customer support</li>
+                    <li>✅ Exclusive member events & book clubs</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <h2 class="colour">📚 Your Library</h2>
+        <p>"Bringing Knowledge Closer to You!"</p>
+
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <div class="c"> <h3>📍 Contact Us</h3></div>
+                <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                    <p>📧 Email: support@yourlibrary.com</p>
+                    <p>📞 Phone: +91 9980725232</p></div>
+               
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3 class="follow">🌍 Follow Us</h3>
+                <div class="footer-icons">
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                    
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                    <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Your Library. All rights reserved. 
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

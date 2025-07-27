@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Your Library</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5efe0;
+            color: #000;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: #111;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 250px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            color: #c4a8ff;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Login Section */
+        .login-section {
+            margin-top: 120px;
+            padding: 20px;
+        }
+
+        .login-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .login-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .login-box {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .login-box p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .login-box a {
+            display: inline-block;
+            background: blue;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .login-box a:hover {
+            background: darkblue;
+        }
+
+        .footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+
+.colour
+{
+    color:white;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn active">LOGIN</a>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+    </br>
+</br>
+        <h1>Welcome to <span style="color: blue;">Your Library!</span></h1>
+        <p>Access your account to explore, manage books, and track your reading journey.</p>
+        <hr style="width: 50%; margin: auto; border: 1px solid #ccc; margin-top: 10px;">
+    </br>
+        <h2 style="margin-top: 30px;">Choose Your Login Type</h2>
+    </br>
+        <div class="login-container">
+            <!-- User Login -->
+             
+            <div class="login-box">
+                <h3>User Login</h3>
+                <p>For library members to borrow and manage books.</p>
+                <a href="user_login.html">LOGIN</a>
+            </div>
+
+            <!-- Admin Login -->
+            <div class="login-box">
+                <h3>Admin Login</h3>
+                <p>For library staff to manage books & users.</p>
+            </br>
+                <a href="adminlogin.html">LOGIN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <h2 class="colour">📚 Your Library</h2>
+        <p>"Bringing Knowledge Closer to You!"</p>
+
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <div class="c"> <h3>📍 Contact Us</h3></div>
+                <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                    <p>📧 Email: support@yourlibrary.com</p>
+                    <p>📞 Phone: +91 9980725232</p></div>
+               
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3 class="follow">🌍 Follow Us</h3>
+                <div class="footer-icons">
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                    
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                    <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Your Library. All rights reserved. 
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

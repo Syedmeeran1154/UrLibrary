@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>L
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrLibrary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0000ff;
+            overflow-x: hidden;
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 300px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* ===== Hero Section ===== */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 120px 50px 0;
+    background: linear-gradient(to right, #ccc 50%, #6610f2 50%);
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hero-images img {
+    width: 30%; /* Adjust image size */
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zigzag effect */
+.hero-images img:nth-child(odd) {
+    transform: translateY(-20px); /* Shift odd images up */
+}
+
+.hero-images img:nth-child(even) {
+    transform: translateY(20px); /* Shift even images down */
+}
+
+
+
+        .content {
+            max-width: 50%;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 span {
+            color: white;
+            font-size: 40px;
+        }
+
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #200D83;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: black;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .cta-btn {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .features {
+            background: #fdf6e3;
+            text-align: center;
+            padding: 80px 50px;
+        }
+        .features h2, .about h2, .trending h2 {
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 350px;
+            text-align: left;
+        }
+        .feature-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+        }
+        .about {
+            background: #f4b642;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            margin: auto;
+            background: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .about-content img {
+            width: 40%;
+            border-radius: 10px;
+        }
+        .about-content p {
+            padding: 0 20px;
+            line-height: 1.9;
+        }
+        .trending {
+            background: #fdf6e3;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .trending-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .trending-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .why-choose {
+            background: #f4b642;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .why-choose-container {
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            margin: auto;
+            background: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            justify-content: space-between;
+        }
+        .why-choose-container img {
+            width: 40%;
+            border-radius: 10px;
+        }
+        .why-choose-container p {
+            padding: 0 20px;
+            width: 55%;
+            line-height: 1.9;
+        }
+        .stats {
+            background: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            line-height : 1.7;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Testimonials Section */
+.testimonial-section {
+    background-color: #d1d1d1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonial-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial img {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #000;
+}
+
+.testimonial-content {
+    text-align: left;
+}
+
+.testimonial-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testimonial-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Read More Button */
+.review-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.review-button:hover {
+    background-color: darkblue;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+
+.colour
+{
+    color:white;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+        </div>
+        <nav>
+            <ul>
+                <li class="q"><a href="homepage.html">HOME</a></li>
+                <li class="q"><a href="pricing.html">PRICING</a></li>
+                <li class="q"><a href="contact_us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn">LOGIN</a>
+    </header>
+
+    <div class="hero">
+
+        <div class="hero-content">
+            <h1>WELCOME TO <span class="highlight">YOUR LIBRARY</span></h1>
+            <p class="tagline">"A World of Knowledge at Your Fingertips!"</p>
+        </br>
+    </br>
+            <h2>Search & Borrow your fav book effortlessly</h2>
+        </br>
+            <p class="description">Explore a vast collection of books, borrow seamlessly, and enjoy unlimited reading anytime, anywhere. Join Your Library today and embark on a journey of knowledge and discovery! </p>
+        </br>
+        <script>
+            function redirectTosignup() {
+                window.location.href = "Sign_up.html";
+            }
+        </script>
+        
+        <button onclick="redirectTosignup()" class="cta-btn">Get Started</button>
+        </div>
+        <div class="hero-images">
+            <img src=C:\Users\SYEDMEERAN\Downloads\Psychology-of-Money-Book-1325x2048.jpg alt="Book 1">
+            <img src="C:\Users\SYEDMEERAN\Downloads\81YhYe6GNcL._SL1500_.jpg" alt="Book 2">
+            <img src="file:///C:/Users/SYEDMEERAN/Downloads/1003w-QHBKwQnsgzs.webp" alt="Book 3">
+            <img src="C:\Users\SYEDMEERAN\Downloads\da20b22fe0f8413dbcfbc25642322081.jpg" alt="Book 4">
+            <img src=C:\Users\SYEDMEERAN\Downloads\51vNASSgb9L.jpg alt="Book 4">
+            
+   
+        </div>
+    </div>
+    
+    <div class="features section">
+        <h2>Features</h2>
+    </br>
+        <div class="features-container">
+            <div class="feature-item">
+            </br>
+                <img src="C:\Users\SYEDMEERAN\LMS\images\Group 17.png" alt="Search Books">
+          
+                <p>Search books by title, author, or genre with advanced filters.</p>
+            </div>
+            <div class="feature-item">
+            </br>
+                <img src="C:\Users\SYEDMEERAN\Group 18.png" alt="Borrow Books">
+            
+                <p>Borrow books easily and track your due dates with reminders.</p>
+            </div>
+            <div class="feature-item">
+                </br>
+                <img src="C:\Users\SYEDMEERAN\Group 19.png" alt="Wishlist Books">
+                <p>Save favorite books to your wishlist and get notified when available.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about section">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <img src="C:\Users\SYEDMEERAN\Downloads\93df1560097eedb72743d4824ff91fe5.jpg" alt="Library Image">
+            <p>Welcome to Your Library, a hub of knowledge dedicated to fostering learning and curiosity. Our extensive collection of books, e-resources, and research materials caters to readers of all ages. With a user-friendly interface and innovative features, we strive to make reading and borrowing books effortless. Our mission is to create a seamless and enriching experience for every book lover.</p>
+        </div>
+    </div>
+    
+    <div class="trending section">
+        <h2>Trending Now</h2>
+        
+        <div class="trending-container">
+            <img src="C:\Users\SYEDMEERAN\Downloads\Psychology-of-Money-Book-1325x2048.jpg" alt="Psychology of Money">
+            <img src="C:\Users\SYEDMEERAN\Downloads\1-1490424839.jpg" alt="The Lean Startup">
+            <img src="C:\Users\SYEDMEERAN\Downloads\81YhYe6GNcL._SL1500_.jpg" alt="The Lean Startup">
+            <img src="file:///C:/Users/SYEDMEERAN/Downloads/1003w-QHBKwQnsgzs.webp" alt="The Lean Startup">
+            <img src="C:\Users\SYEDMEERAN\Downloads\9781445180069.jpg" alt="Psychology of Money">
+            <img src="C:\Users\SYEDMEERAN\Downloads\cropped-5-AM-club-Book-cover.jpg" alt="The Lean Startup">
+            <img src="C:\Users\SYEDMEERAN\Downloads\da20b22fe0f8413dbcfbc25642322081.jpg" alt="The Lean Startup">
+            <img src="file:///C:/Users/SYEDMEERAN/Downloads/TheSumofAllThings_cover_June21_option4(1).webp" alt="The Lean Startup">
+        </div>
+        </div>
+    </div>
+    <div class="why-choose section">
+        <h2>Why Choose Us?</h2>
+        <div class="why-choose-container">
+            <p>At Your Library, we make knowledge easily accessible with a vast collection of books and digital resources. Our seamless user experience, advanced search, and personalized recommendations ensure effortless book discovery. Whether you're a student, researcher, or avid reader, our platform provides a well-organized space to explore and learn. Join us and unlock endless reading opportunities!</p>
+            <img src="C:\Users\SYEDMEERAN\Downloads\books-library-shelves-lighting.jpg" alt="Library Shelves">
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stats-item">
+                <img src="C:\Users\SYEDMEERAN\customers-icon-12 1.png" alt="Users">
+                <span>1,000+ USERS</span>
+            </div>
+            <div class="stats-item">
+                <img src="C:\Users\SYEDMEERAN\3d-book-icon-with-transparent-background-free-png 1.png" alt="Books">
+                <span>10,000+ BOOKS</span>
+            </div>
+        </div>
+        <p class="description">At Your Library, we are proud to serve 1,000+ registered users with access to an extensive collection of 10,000+ books across various genres. From fiction to research materials, our library ensures a seamless experience for book lovers, students, and scholars alike. Join our growing community and explore a world of knowledge today!</p>
+    </div>
+    <div class="testimonial-section">
+        <h2>What Our Clients <br> Say About Us</h2>
+
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="C:\Users\SYEDMEERAN\11zon_cropped 1.png" alt="Alexander Ivanov">
+                <div class="testimonial-content">
+                    <h3>Alexander Ivanov</h3>
+                    <p>"Your Library has been a game-changer! With thousands of books available, I can explore new genres and borrow with ease. The reading tracker keeps me motivated!”</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="C:\Users\SYEDMEERAN\11zon_cropped (2) 1.png" alt="Scarlet Johnson">
+                <div class="testimonial-content">
+                    <h3>Scarlet Johnson</h3>
+                    <p>"As a busy professional, finding time to read was tough. Your Library makes it easy with quick access to books, seamless borrowing, and an amazing collection!"</p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="C:\Users\SYEDMEERAN\11zon_cropped (1) 1.png" alt="Andrew Garfield">
+                <div class="testimonial-content">
+                    <h3>Andrew Garfield</h3>
+                    <p>"The best online library experience! Borrowing books is seamless, and I love the personalized recommendations. The digital collection is a lifesaver for my research."</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="cta-btn">Read All Reviews</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <h2 class="colour">📚 Your Library</h2>
+        <p>"Bringing Knowledge Closer to You!"</p>
+
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <div class="c"> <h3>📍 Contact Us</h3></div>
+                <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                    <p>📧 Email: support@yourlibrary.com</p>
+                    <p>📞 Phone: +91 9980725232</p></div>
+               
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3 class="follow">🌍 Follow Us</h3>
+                <div class="footer-icons">
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                    
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                    <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Your Library. All rights reserved. 
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fefae0;
+            margin: 0;
+            padding: 0;
+        }
+     /* Header */
+     header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: #111;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 95%;
+            z-index: 1000;
+        }
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 250px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            color: #c4a8ff;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+            .label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-box {
+    width: 100%; /* Ensures both fields are the same width */
+    height: 40px; /* Adjust the height to be the same */
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .password-container input {
+            width: 100%;
+        }
+         
+.eye-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+}
+
+.eye-toggle img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.eye-icon img {
+    width: 20px; /* Adjust to match the icon size */
+    height: 20px;
+}
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            text-align:center;
+            visibility: hidden;
+        }
+        .remember-container {
+            display: flex;
+            align-items: center;
+            margin-top: 7px;
+            font-size: 12px;
+            
+        }
+        .login-btn-submit {
+            width: 100%;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .social-login {
+            margin-top: 15px;
+        }
+        .social-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .google-btn {
+            background: lightgray;
+        }
+        .facebook-btn {
+            background: lightgray;
+        }
+        .footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .footer a {
+            color: lightblue;
+            text-decoration: none;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #777;
+            position: relative;
+        }
+
+        .or-divider:before, .or-divider:after {
+            content: "";
+            width: 40%;
+            height: 1px;
+            background: #ccc;
+            position: absolute;
+            top: 50%;
+        }
+
+        .or-divider:before {
+            left: 0;
+        }
+
+        .or-divider:after {
+            right: 0;
+        }
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-login button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #f1f1f1;
+        }
+
+        .social-login button img {
+            width: 18px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        /* Footer */
+        .footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+.eye-toggle {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.eye-toggle img {
+    width: 20px;
+    height: 20px;
+}
+
+.colour
+{
+    color:white;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">
+        <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="pricing.html">PRICING</a></li>
+            <li><a href="contact_us.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <a href="login.html" class="login-btn active">LOGIN</a>
+</header>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+<!-- Login Form -->
+<div class="container">
+    <h2>Log in</h2>
+
+    <!-- Email Field -->
+    <label class="label">Username</label>
+    <input type="email" id="email" class="input-box" placeholder="Enter your email">
+    <span id="emailError" class="error">Enter a valid email address</span>
+
+    <!-- Password Field -->
+    <label class="label">Password</label>
+    <div class="password-container">
+        <input type="password" id="password" class="input-box" placeholder="Enter your password">
+        <span class="eye-toggle" onclick="togglePassword()">
+            <img id="eyeIcon" src="C:\Users\SYEDMEERAN\LMS\images\invisible.png" alt="Show Password">
+        </span>
+    </div>
+    <span id="passwordError" class="error">Password must be at least 8 characters</span>
+
+    <!-- Remember Me & Forgot Password -->
+    <div class="remember-container">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+        <a href="forgot_pwd.html" style="margin-left: auto; color: red; font-size: 12px;">Forgot password?</a>
+    </div>
+
+    <!-- Login Button -->
+    <button class="login-btn-submit" onclick="validateForm()">Login</button>
+   
+    <div class="or-divider">OR</div>
+
+    <!-- Social Login Buttons -->
+    <div class="social-login">
+        <button><img src="C:\Users\SYEDMEERAN\Downloads\google-icon-logo-png-transparent.png" alt=""> Log in with Google</button>
+        <button><img src="C:\Users\SYEDMEERAN\Downloads\facebook-3-logo-png-transparent.png" alt=""> Log in with Facebook</button>
+    </div>
+    <p>Don't have an account? <a href="Sign_up.html">Sign up!</a></p>
+</div>
+
+<div class="footer">
+    <h2 class="colour">📚 Your Library</h2>
+    <p>"Bringing Knowledge Closer to You!"</p>
+
+    <div class="footer-container">
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <div class="c"> <h3>📍 Contact Us</h3></div>
+            <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                <p>📧 Email: support@yourlibrary.com</p>
+                <p>📞 Phone: +91 9980725232</p></div>
+           
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section">
+            <h3 class="follow">🌍 Follow Us</h3>
+            <div class="footer-icons">
+                <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                
+                <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Your Library. All rights reserved. 
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Help</a>
+        </div>
+    </div>
+</div>
+<!-- JavaScript for Validation & Password Toggle -->
+<script>
+    function validateForm() {
+        let isValid = true;
+
+        // Get values
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+
+        // Get error messages
+        let emailError = document.getElementById("emailError");
+        let passwordError = document.getElementById("passwordError");
+
+        // Email validation (valid email format)
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!email.value.match(emailPattern)) {
+            emailError.style.visibility = "visible";
+            email.style.borderColor = "red";
+            isValid = false;
+        } else {
+            emailError.style.visibility = "hidden";
+            email.style.borderColor = "#ccc";
+        }
+
+        // Password validation (minimum 6 characters)
+        if (password.value.length < 8) {
+            passwordError.style.visibility = "visible";
+            password.style.borderColor = "red";
+            isValid = false;
+        } else {
+            passwordError.style.visibility = "hidden";
+            password.style.borderColor = "#ccc";
+        }
+
+        return isValid;
+    }
+
+    function togglePassword() {
+    let passwordInput = document.getElementById("password");
+    let eyeIcon = document.getElementById("eyeIcon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text"; // Show password
+        eyeIcon.src ="./images/visible.png"; // Change to open eye
+    } else {
+        passwordInput.type = "password"; // Hide password
+        eyeIcon.src ="./images/invisible.png"; // Change to closed eye
+    }
+}
+
+
+</script>
+
+</body>
+</html>

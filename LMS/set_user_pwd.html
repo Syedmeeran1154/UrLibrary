@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set a New Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6e3;
+            margin: 0;
+        }        
+        header {
+            position: fixed;
+            top: 0;
+            width: 95%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 300px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .form-box {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: left;
+        }
+        .password-requirement {
+            font-size: 12px;
+            text-align: left;
+            color: #777;
+        }
+        button {
+            background-color: #3b44f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2a33c4;
+        }
+        .footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+
+.colour
+{
+    color:white;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+        </div>
+        <nav>
+            <ul>
+                <li class="q"><a href="homepage.html">HOME</a></li>
+                <li class="q"><a href="pricing.html">PRICING</a></li>
+                <li class="q"><a href="contact_us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn">LOGIN</a>
+    </header>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="container">
+    <h2>Set a new password</h2>
+    <p>Create a new password. Ensure it differs from previous ones for security</p>
+    <div class="form-box">
+        <div>
+            <input type="password" id="password" placeholder="Password">
+            <p class="password-requirement">Use 8 or more characters and symbols</p>
+            <p class="error" id="passwordError"></p>
+        </div>
+        <div>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <p class="error" id="confirmPasswordError"></p>
+        </div>
+        <button onclick="validatePassword()">Update Password</button>
+    </div>
+</br>
+</br>
+</br>
+</div>
+    <!-- Footer Section -->
+    <div class="footer">
+        <h2 class="colour">📚 Your Library</h2>
+        <p>"Bringing Knowledge Closer to You!"</p>
+
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <div class="c"> <h3>📍 Contact Us</h3></div>
+                <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                    <p>📧 Email: support@yourlibrary.com</p>
+                    <p>📞 Phone: +91 9980725232</p></div>
+               
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <h3 class="follow">🌍 Follow Us</h3>
+                <div class="footer-icons">
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                    
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                    <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                    <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Your Library. All rights reserved. 
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    function validatePassword() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        passwordError.textContent = '';
+        confirmPasswordError.textContent = '';
+
+        // Validate Password
+        if (!password) {
+            passwordError.textContent = 'Password is required';
+        } else if (password.length < 8 || !/[^a-zA-Z0-9]/.test(password)) {
+            passwordError.textContent = 'Password must be at least 8 characters and contain symbols';
+        }
+
+        // Validate Confirm Password
+        if (!confirmPassword) {
+            confirmPasswordError.textContent = 'Confirm Password is required';
+        } else if (password !== confirmPassword) {
+            confirmPasswordError.textContent = 'Passwords do not match';
+        }
+
+        // If no errors, redirect to login page
+        if (!passwordError.textContent && !confirmPasswordError.textContent) {
+            alert('Password Updated Successfully!');
+            window.location.href = 'login.html';
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Your Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #fffbe6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+header {
+            position: fixed;
+            top: 0;
+            width: 95%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none; /* Initially hidden */
+            margin-top: 4px;
+        }
+        .logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 300px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .login-btn {
+            background: white;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+.container {
+    margin: 40px auto;
+    width: 60%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    width: 48%;
+    text-align: left;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box i {
+    position: absolute;
+    right: 10px;
+    top: 31px;
+    cursor: pointer;
+}
+
+.password-instruction {
+    font-size: 12px;
+    color: #555;
+    text-align: left;
+}
+
+.checkbox-container {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.signup-btn {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.footer-section {
+    width: 45%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    color : white
+} 
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.follow{
+    text-align: center;
+}
+.c
+{
+    justify-content: center;
+    text-align: center;
+}
+.r{  justify-content: center;
+    text-align: center;
+
+}
+
+.colour
+{
+    color:white;
+}
+.toggle-password {
+    position: absolute;
+    right: 10px;  /* Keep it aligned to the right */
+    top: 50%;
+    transform: translateY(-70%); /* Moves it slightly up */
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\SYEDMEERAN\Downloads\H Letter Shape Logo (1).png" alt="Your Library">
+        </div>
+        <nav>
+            <ul>
+                <li class="q"><a href="homepage.html">HOME</a></li>
+                <li class="q"><a href="pricing.html">PRICING</a></li>
+                <li class="q"><a href="contact_us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login-btn">LOGIN</a>
+    </header>
+</br>
+</br>
+</br>
+</br></br>
+</br>
+
+    <div class="container">
+        <h1>CREATE ACCOUNT</h1>
+        <form id="signupForm">
+            <div class="row">
+                <div class="input-box">
+                    <label>First Name</label>
+                    <input type="text" id="firstName">
+                    <span class="error-message" id="firstNameError"></span>
+                </div>
+                <div class="input-box">
+                    <label>Last Name</label>
+                    <input type="text" id="lastName">
+                    <span class="error-message" id="lastNameError"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="email" id="email">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="input-box">
+                    <label>Phone</label>
+                    <input type="tel" id="phone">
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-box password-box">
+                    <label>Password</label>
+                    <input type="password" id="password">
+                    <i class="fa fa-eye-slash" onclick="togglePassword('password')"></i>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                <div class="input-box password-box">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword">
+                    <i class="fa fa-eye-slash" onclick="togglePassword('confirmPassword')"></i>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+            </div>
+
+            <p class="password-instruction">Use 8 or more characters with mix of letters, numbers & symbols.</p>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms">
+                <label for="terms">By creating an account, I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                <span class="error-message" id="termsError"></span>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="notifications">
+                <label for="notifications">I consent to receive book recommendations and event updates via email.</label>
+                <span class="error-message" id="notificationsError"></span>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+
+            <p>Already have an account? <a href="login.html">Login in</a></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let isValid = true;
+
+    function validateField(id, message) {
+        let input = document.getElementById(id);
+        let errorSpan = document.getElementById(id + "Error");
+        if (input.value.trim() === "") {
+            errorSpan.textContent = message;
+            isValid = false;
+        } else {
+            errorSpan.textContent = "";
+        }
+    }
+
+    validateField("firstName", "First name is required.");
+    validateField("lastName", "Last name is required.");
+    validateField("email", "Email is required.");
+    validateField("phone", "Phone number is required.");
+    validateField("password", "Password is required.");
+    validateField("confirmPassword", "Confirm password is required.");
+
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+        document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+        isValid = false;
+    }
+
+    if (!document.getElementById("terms").checked) {
+        document.getElementById("termsError").textContent = "You must accept the Terms.";
+        isValid = false;
+    } else {
+        document.getElementById("termsError").textContent = "";
+    }
+    if (!document.getElementById("notifications").checked) {
+        document.getElementById("notificationsError").textContent = "You must accept the Concerns.";
+        isValid = false;
+    } else {
+        document.getElementById("notificationsError").textContent = "";
+    }
+
+    if (isValid) {
+        alert('Account CreatedSuccessfully!');
+        window.location.href = 'login.html';
+    }
+});
+
+function togglePassword(id) {
+    let input = document.getElementById(id);
+    let icon = input.nextElementSibling;
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("fa-eye-slash", "fa-eye");
+    } else {
+        input.type = "password";
+        icon.classList.replace("fa-eye", "fa-eye-slash");
+    }
+}
+
+    </script>
+
+<div class="footer">
+    <h2 class="colour">📚 Your Library</h2>
+    <p>"Bringing Knowledge Closer to You!"</p>
+
+    <div class="footer-container">
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <div class="c"> <h3>📍 Contact Us</h3></div>
+            <div class="r"><p>📍 Address: Anna Nagar, Chennai</p>
+                <p>📧 Email: support@yourlibrary.com</p>
+                <p>📞 Phone: +91 9980725232</p></div>
+           
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section">
+            <h3 class="follow">🌍 Follow Us</h3>
+            <div class="footer-icons">
+                <a href="#"><img src="C:\Users\SYEDMEERAN\facebook-logo-transparent-background-free-png 1.png"alt="Facebook"></a>
+                
+                <a href="#"><img src="C:\Users\SYEDMEERAN\instagram-logo-instagram-icon-transparent-free-png 1.png" alt="Instagram"></a>
+                <a href="#"><img src="C:\Users\SYEDMEERAN\linkedin-logo-linkedin-icon-transparent-free-png 1.png" alt="LinkedIn"></a>
+                <a href="#"><img src=C:\Users\SYEDMEERAN\Downloads\icons8-x-30.png alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2025 Your Library. All rights reserved. 
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Help</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
