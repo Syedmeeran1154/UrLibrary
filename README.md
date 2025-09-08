@@ -27,15 +27,15 @@ Urlibrary is a **personal digital library** that helps you **store, organize, an
 
 git clone https://github.com/your-username/urlibrary.git
 cd urlibrary
-2. Install dependencies
+### 2. Install dependencies
 bash
 Copy code
 npm install
-3. Run locally
+### 3. Run locally
 bash
 Copy code
 npm start
-4. Build for production
+### 4. Build for production
 bash
 Copy code
 npm run build
