@@ -40,11 +40,15 @@ bash
 Copy code
 npm run build
 
+---
+
 
 ### 🌍 Deployment
 
 The project is deployed on Vercel:
 👉 Live Demo : https://urlibrary.vercel.app/
+
+---
 
 ### 🤝 Contributing
 
@@ -56,12 +60,12 @@ Create a feature branch
 
 Submit a pull request
 
+---
+
+
 ### 🧑‍💻 Author
 
 Syed Meeran S
 
-Portfolio: [Your Portfolio Link]
+Portfolio:https://syed-meerans.vercel.app/
 
-LinkedIn: [Your LinkedIn Link]
-
-GitHub: [Your GitHub Link]
