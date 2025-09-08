@@ -44,7 +44,7 @@ npm run build
 ### 🌍 Deployment
 
 The project is deployed on Vercel:
-👉 Live Demo
+👉 Live Demo : https://urlibrary.vercel.app/
 
 ### 🤝 Contributing
 
